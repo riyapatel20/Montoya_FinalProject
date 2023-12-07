@@ -9,17 +9,14 @@
 # Line 21 - https://www.geeksforgeeks.org/how-to-encrypt-and-decrypt-strings-in-python/
 # Anything else that's relevant: N/A
 
-
 import json
 
-
 def decrypt_movie_title(fernet_key, encrypted_message_file):
-   '''
-   This function decrypts the movie title for Montoya.
-   '''
-   with open(encrypted_message_file, 'r') as file:
-       encrypted_data = json.load(file)["Montoya"][0]
-
-
-   decrypted_message = fernet_key.decrypt(encrypted_data.encode())
-   return decrypted_message.decode()
+    '''
+    This function decrypts the movie title for Montoya.
+    '''
+    with open(encrypted_message_file, 'r') as file:
+        encrypted_data = json.load(file)["Montoya"][0]
+       
+    decrypted_message = fernet_key.decrypt(encrypted_data.encode())
+    return decrypted_message.decode()
